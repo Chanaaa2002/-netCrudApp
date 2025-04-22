@@ -6,7 +6,7 @@ using System.Web;
 
 namespace CrudApplication.Models
 {
-    public class Categories
+    public class Category
     {
         public int Id { get; set; }
 

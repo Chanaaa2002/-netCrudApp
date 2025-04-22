@@ -1,0 +1,17 @@
+﻿@model CrudApplication.Models.Product
+@{
+    ViewBag.Title = "Delete Product";
+}
+
+<h2>Are you sure you want to delete this?</h2>
+
+<div class="alert alert-danger">
+    <strong>@Model.Name</strong> - @Model.Description
+</div>
+
+@using (Html.BeginForm("DeleteConfirmed", "Product", new { id = Model.Id }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancel</a>
+}

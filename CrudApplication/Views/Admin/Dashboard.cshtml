@@ -1,7 +1,38 @@
-﻿
-@{
-    ViewBag.Title = "Dashboard";
+﻿@{
+    ViewBag.Title = "Admin Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Dashboard</h2>
+<div class="container mt-4">
+    <h2 class="mb-3">Hello, @ViewBag.Name! </h2>
 
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card text-white bg-primary shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Total Products</h5>
+                    <p class="card-text display-6">@ViewBag.TotalProducts</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card text-white bg-success shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Total Categories</h5>
+                    <p class="card-text display-6">@ViewBag.TotalCategories</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex gap-3">
+        <a href="@Url.Action("Index", "Product")" class="btn btn-outline-warning btn-lg">
+            ADD Products
+        </a>
+
+        <a href="@Url.Action("Index", "Category")" class="btn btn-outline-info btn-lg">
+            ADD Categories
+        </a>
+    </div>
+</div>

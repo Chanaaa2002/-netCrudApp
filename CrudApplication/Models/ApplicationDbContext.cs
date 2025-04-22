@@ -14,7 +14,7 @@ namespace CrudApplication.Models
 
         public DbSet<Product> Products { get; set; }    
 
-        public DbSet<Categories> Categories { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
     }
 }

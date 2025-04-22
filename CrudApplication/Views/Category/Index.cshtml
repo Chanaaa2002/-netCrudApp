@@ -1,0 +1,28 @@
+﻿@model IEnumerable<CrudApplication.Models.Category>  
+@{  
+  ViewBag.Title = "Category List";  
+}  
+
+<h2>Category List</h2>  
+<a href="@Url.Action("Create", "Category")" class="btn btn-primary mb-3">+ Add Category</a>  
+
+<table class="table table-bordered">  
+  <thead>  
+      <tr>  
+          <th>Name</th>  
+          <th>Actions</th>  
+      </tr>  
+  </thead>  
+  <tbody>  
+      @foreach (var c in Model)  
+      {  
+          <tr>  
+              <td>@c.Name</td>  
+              <td>  
+                  <a href="@Url.Action("Edit", "Category", new { id = c.Id })" class="btn btn-sm btn-warning">Edit</a>  
+                  <a href="@Url.Action("Delete", "Category", new { id = c.Id })" class="btn btn-sm btn-danger">Delete</a>  
+              </td>  
+          </tr>  
+      }  
+  </tbody>  
+</table>

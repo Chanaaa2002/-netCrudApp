@@ -1,0 +1,21 @@
+﻿@model CrudApplication.Models.Category
+@{
+    ViewBag.Title = "Add Category";
+}
+
+<h2>Add Category</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+    
+
+
+    <button type="submit" class="btn btn-success">Create</button>
+}
